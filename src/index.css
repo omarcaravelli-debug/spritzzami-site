@@ -20,11 +20,19 @@
 html {
   scroll-behavior: smooth;
   background-color: #ff5c00;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   @apply bg-[#ff5c00] font-body text-white antialiased;
   background-color: #ff5c00;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
 }
 
 ::selection {
@@ -167,6 +175,7 @@ body {
 .leaflet-popup-content {
   margin: 0;
   width: 280px !important;
+  max-width: calc(100vw - 44px) !important;
   font-family: var(--font-body);
   line-height: 1.3;
 }

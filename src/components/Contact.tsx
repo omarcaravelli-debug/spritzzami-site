@@ -12,20 +12,22 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          index="04"
+          index="03"
           kicker="Contatti"
-          title="Porta il polpo da te"
-          sub="Feste private, locali, collaborazioni."
+          title="SCRIVICI"
+          sub="Collaborazioni, Sponsor etc."
         />
 
-        <div className="grid gap-10 sm:grid-cols-2 sm:gap-14">
+        <div className="grid gap-8 sm:grid-cols-2 sm:gap-14">
           <Reveal>
-            <p className={labelCls}>Email</p>
+            <p className={labelCls}>WhatsApp</p>
             <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-2 inline-block break-all font-display text-3xl text-white underline decoration-white decoration-4 underline-offset-8 transition-opacity hover:opacity-80 sm:text-4xl tracking-wider"
+              href="https://wa.me/qr/KWTNLVYR56MUO1?s=r"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block break-words font-display text-2xl text-white underline decoration-white decoration-4 underline-offset-8 transition-opacity hover:opacity-80 sm:text-3xl lg:text-4xl tracking-wider"
             >
-              {siteConfig.email}
+              Chatta su WhatsApp ↗
             </a>
           </Reveal>
           <Reveal delay={0.15}>
@@ -33,10 +35,10 @@ export default function Contact() {
             <a
               href={siteConfig.instagram}
               target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-block font-display text-3xl text-white underline decoration-white decoration-4 underline-offset-8 transition-opacity hover:opacity-80 sm:text-4xl tracking-wider"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block break-words font-display text-2xl text-white underline decoration-white decoration-4 underline-offset-8 transition-opacity hover:opacity-80 sm:text-3xl lg:text-4xl tracking-wider"
             >
-              {siteConfig.instagramHandle}
+              {siteConfig.instagramHandle} ↗
             </a>
           </Reveal>
         </div>

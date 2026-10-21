@@ -285,7 +285,7 @@ export default function EventMap({
                             <a
                               href={event.driveUrl}
                               target="_blank"
-                              rel="noreferrer"
+                              rel="noopener noreferrer"
                               className="mt-1.5 block w-full rounded-sm border border-white py-1 text-center font-mono text-[11px] font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#ff5c00]"
                             >
                               Apri cartella Drive ↗
@@ -302,7 +302,7 @@ export default function EventMap({
             {/* ── archivio serate a destra ── */}
             <div className="flex max-h-[46vh] flex-col divide-y divide-white/20 overflow-y-auto overscroll-contain bg-[#eb5400] sm:max-h-[50vh] lg:h-[calc(100svh-18rem)] lg:max-h-[720px] lg:min-h-[300px]">
               <p className="sticky top-0 z-10 border-b border-white/20 bg-[#eb5400] px-3.5 py-2.5 font-mono text-[10px] uppercase tracking-widest text-white/80 sm:px-4">
-                Archivio — {events.length} serate
+                Album
               </p>
               {events.map((event, i) => (
                 <button

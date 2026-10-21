@@ -5,7 +5,6 @@ import { siteConfig } from '../config';
 const LINKS = [
   { href: '#mappa', label: 'Memories' },
   { href: '#eventi', label: 'Prossimi eventi' },
-  { href: '#chi-siamo', label: 'Chi siamo' },
   { href: '#contatti', label: 'Contatti' },
 ];
 
@@ -13,10 +12,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/25 bg-[#ff5c00]/95 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/25 bg-[#ff5c00]/95 pt-[env(safe-area-inset-top,0px)] backdrop-blur-md">
       <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="flex items-center gap-2.5">
-          <img src="/logo.png" alt="Logo Spritzzami" className="h-8 w-8 object-contain" />
+          <img src="/polpo-icon.png?v=no-circle" alt="Logo Spritzzami" className="h-9 w-9 object-contain" />
           <span className="font-display text-2xl tracking-widest text-white uppercase">
             Spritzzami
           </span>
@@ -37,7 +36,7 @@ export default function Navbar() {
             <a
               href={siteConfig.instagram}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="border border-white/50 px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-[#ff5c00]"
             >
               {siteConfig.instagramHandle} ↗
@@ -70,7 +69,7 @@ export default function Navbar() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block border-b border-white/15 px-6 py-4 font-mono text-sm uppercase tracking-widest text-white hover:bg-white/10"
+                  className="block border-b border-white/15 px-6 py-4 font-mono text-sm uppercase tracking-widest text-white active:bg-white/15 hover:bg-white/10"
                 >
                   {l.label}
                 </a>
@@ -80,8 +79,9 @@ export default function Navbar() {
               <a
                 href={siteConfig.instagram}
                 target="_blank"
-                rel="noreferrer"
-                className="block px-6 py-4 font-mono text-sm font-bold uppercase tracking-widest text-white"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="block px-6 py-4 font-mono text-sm font-bold uppercase tracking-widest text-white active:bg-white/15"
               >
                 {siteConfig.instagramHandle} ↗
               </a>

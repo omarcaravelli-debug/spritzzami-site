@@ -12,7 +12,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-line pt-6 sm:flex-row">
           <p className="font-mono text-xs text-white/80">
-            © {new Date().getFullYear()} Spritzzami — {siteConfig.city}
+            © {new Date().getFullYear()} Spritzzami — street spritz house repeat
           </p>
           <p className="font-mono text-xs text-white/70">
             bevi responsabilmente, il polpo guida sempre sobrio
@@ -20,7 +20,7 @@ export default function Footer() {
           <a
             href={siteConfig.instagram}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-80"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

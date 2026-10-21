@@ -8,7 +8,6 @@ import Navbar from './components/Navbar';
 import EventMap from './components/EventMap';
 import MarqueeBanner from './components/MarqueeBanner';
 import UpcomingEvents from './components/UpcomingEvents';
-import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import type { SpritzEvent } from './data/events';
@@ -30,7 +29,7 @@ export default function App() {
         <EventMap onOpenGallery={setGallery} />
         <MarqueeBanner />
         <UpcomingEvents />
-        <About />
+        <MarqueeBanner />
         <Contact />
       </main>
       <Footer />
