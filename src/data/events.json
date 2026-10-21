@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "vol-1-zanzibar",
+    "title": "VOL. 1 — ZANZIBAR",
+    "mapLabel": "Zanzibar",
+    "category": "bar",
+    "venue": "Via Miglioli, 23",
+    "city": "Crema",
+    "date": "2026-05-01",
+    "coords": [45.3671, 9.6991],
+    "description": "Serata Spritzzami al Zanzibar di Crema."
+  },
+  {
+    "slug": "vol-2-masseroni",
+    "title": "VOL. 2 — BAR MASSERONI",
+    "mapLabel": "Bar Masseroni",
+    "category": "cafe",
+    "venue": "Corso Roma, 84 (angolo Via XX Settembre)",
+    "city": "Lodi",
+    "date": "2026-07-12",
+    "coords": [45.31224, 9.50436],
+    "description": "Serata Spritzzami al Bar Masseroni in Corso Roma a Lodi."
+  },
+  {
+    "slug": "vol-3-pergola",
+    "title": "VOL. 3 — LA PERGOLA",
+    "mapLabel": "La Pergola",
+    "category": "sports",
+    "venue": "La Pergola, Via per Cà de Bolli 11",
+    "city": "San Martino in Strada",
+    "date": "2026-07-31",
+    "coords": [45.28415, 9.53875],
+    "description": "Serata Spritzzami a La Pergola di San Martino in Strada."
+  },
+  {
+    "slug": "vol-4-aura-club-garden",
+    "title": "VOL. 4 — AURA CLUB GARDEN",
+    "mapLabel": "Aura Club Garden",
+    "category": "bar",
+    "venue": "Aura Club Garden, Piazza G. Marconi 5",
+    "city": "Paullo",
+    "date": "2026-09-11",
+    "coords": [45.41648, 9.40238],
+    "description": "Serata Spritzzami all'Aura Club Garden di Paullo."
+  },
+  {
+    "slug": "vol-5-al-portico-dei-pensieri",
+    "title": "VOL. 5 — AL PORTICO DEI PENSIERI",
+    "mapLabel": "Al Portico dei Pensieri",
+    "category": "restaurant",
+    "venue": "Ristorante Al Portico dei Pensieri, Piazza della Vittoria 22",
+    "city": "Lodi",
+    "date": "2026-10-04",
+    "coords": [45.31358, 9.50262],
+    "description": "Serata Spritzzami Al Portico dei Pensieri in Piazza della Vittoria a Lodi."
+  },
+  {
+    "slug": "vol-6-corso-umberto",
+    "title": "VOL. 6 — BAR MOTTA",
+    "mapLabel": "Bar Motta",
+    "category": "cafe",
+    "venue": "Bar Motta, Corso Umberto I 44",
+    "city": "Lodi",
+    "date": "2026-10-18",
+    "coords": [45.315399, 9.504175],
+    "description": "Serata Spritzzami al Bar Motta in Corso Umberto I 44 a Lodi."
+  }
+]
