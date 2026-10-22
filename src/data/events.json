@@ -1,7 +1,18 @@
 [
   {
-    "slug": "vol-1-zanzibar",
-    "title": "VOL. 1 — ZANZIBAR",
+    "slug": "vol-1-pergola",
+    "title": "VOL. 1 — LA PERGOLA",
+    "mapLabel": "La Pergola",
+    "category": "sports",
+    "venue": "La Pergola, Via per Cà de Bolli 11",
+    "city": "San Martino in Strada",
+    "date": "2026-07-31",
+    "coords": [45.28415, 9.53875],
+    "description": "Serata Spritzzami a La Pergola di San Martino in Strada."
+  },
+  {
+    "slug": "vol-2-zanzibar",
+    "title": "VOL. 2 — ZANZIBAR",
     "mapLabel": "Zanzibar",
     "category": "bar",
     "venue": "Via Miglioli, 23",
@@ -11,26 +22,15 @@
     "description": "Serata Spritzzami al Zanzibar di Crema."
   },
   {
-    "slug": "vol-2-masseroni",
-    "title": "VOL. 2 — BAR MASSERONI",
+    "slug": "vol-3-masseroni",
+    "title": "VOL. 3 — BAR MASSERONI",
     "mapLabel": "Bar Masseroni",
     "category": "cafe",
-    "venue": "Corso Roma, 84 (angolo Via XX Settembre)",
+    "venue": "Corso Roma, 84",
     "city": "Lodi",
     "date": "2026-07-12",
     "coords": [45.31224, 9.50436],
     "description": "Serata Spritzzami al Bar Masseroni in Corso Roma a Lodi."
-  },
-  {
-    "slug": "vol-3-pergola",
-    "title": "VOL. 3 — LA PERGOLA",
-    "mapLabel": "La Pergola",
-    "category": "sports",
-    "venue": "La Pergola, Via per Cà de Bolli 11",
-    "city": "San Martino in Strada",
-    "date": "2026-07-31",
-    "coords": [45.28415, 9.53875],
-    "description": "Serata Spritzzami a La Pergola di San Martino in Strada."
   },
   {
     "slug": "vol-4-aura-club-garden",
