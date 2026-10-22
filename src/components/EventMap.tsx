@@ -114,9 +114,6 @@ function MapController({
         map.panTo(HOME_CENTER, { animate: true, duration: 0.6 });
       }
     },
-    zoom() {
-      onZoomChange(map.getZoom());
-    },
     click() {
       onMapClick();
     },
@@ -186,12 +183,12 @@ export default function EventMap({
                 zoom={HOME_ZOOM}
                 minZoom={9}
                 maxZoom={18}
-                zoomSnap={0.25}
+                zoomSnap={0.5}
                 zoomDelta={0.5}
-                wheelPxPerZoomLevel={110}
-                wheelDebounceTime={30}
+                wheelPxPerZoomLevel={120}
+                wheelDebounceTime={40}
                 zoomAnimation={true}
-                scrollWheelZoom={true}
+                scrollWheelZoom={false}
                 doubleClickZoom={true}
                 touchZoom={true}
                 dragging={true}
@@ -258,6 +255,10 @@ export default function EventMap({
                           <img
                             src={event.cover}
                             alt={event.title}
+                            width={320}
+                            height={224}
+                            loading="lazy"
+                            decoding="async"
                             className={`h-52 w-full object-cover sm:h-56 ${
                               event.slug === 'vol-6-corso-umberto' ? 'object-bottom' : 'object-center'
                             }`}
@@ -330,14 +331,17 @@ export default function EventMap({
                     <img
                       src={event.cover}
                       alt=""
+                      width={56}
+                      height={56}
+                      loading="lazy"
+                      decoding="async"
                       className={`h-12 w-12 shrink-0 -rotate-2 rounded object-cover transition-transform duration-200 group-hover:rotate-0 sm:h-14 sm:w-14 ${
                         event.slug === 'vol-6-corso-umberto' ? 'object-bottom' : 'object-center'
                       }`}
-                      loading="lazy"
                     />
                   ) : (
                     <div className="flex h-12 w-12 shrink-0 -rotate-2 items-center justify-center rounded bg-white/20 transition-transform group-hover:rotate-0 sm:h-14 sm:w-14">
-                      <img src="/logo.png" alt="" className="h-8 w-8 opacity-70" />
+                      <img src="/logo.png" alt="" width={32} height={32} loading="lazy" decoding="async" className="h-8 w-8 opacity-70" />
                     </div>
                   )}
                   <div className="min-w-0 flex-1">

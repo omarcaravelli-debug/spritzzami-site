@@ -15,7 +15,14 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/25 bg-[#ff5c00]/95 pt-[env(safe-area-inset-top,0px)] backdrop-blur-md">
       <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="flex items-center gap-2.5">
-          <img src="/polpo-icon.png?v=no-circle" alt="Logo Spritzzami" className="h-9 w-9 object-contain" />
+          <img
+            src="/polpo-icon.png?v=no-circle"
+            alt="Logo Spritzzami"
+            width={36}
+            height={36}
+            decoding="async"
+            className="h-9 w-9 object-contain"
+          />
           <span className="font-display text-2xl tracking-widest text-white uppercase">
             Spritzzami
           </span>

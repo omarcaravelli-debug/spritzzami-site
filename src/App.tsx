@@ -1,8 +1,4 @@
-import { useEffect, useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import Counter from 'yet-another-react-lightbox/plugins/counter';
-import 'yet-another-react-lightbox/plugins/counter.css';
+import { useEffect, useState, lazy, Suspense } from 'react';
 
 import Navbar from './components/Navbar';
 import EventMap from './components/EventMap';
@@ -11,6 +7,8 @@ import UpcomingEvents from './components/UpcomingEvents';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import type { SpritzEvent } from './data/events';
+
+const GalleryModal = lazy(() => import('./components/GalleryModal'));
 
 export default function App() {
   const [gallery, setGallery] = useState<SpritzEvent | null>(null);
@@ -34,15 +32,11 @@ export default function App() {
       </main>
       <Footer />
 
-      <Lightbox
-        open={gallery !== null}
-        close={() => setGallery(null)}
-        slides={(gallery?.photos ?? []).map((src) => ({ src }))}
-        plugins={[Zoom, Counter]}
-        carousel={{ finite: true }}
-        render={{ slideFooter: () => null }}
-        controller={{ closeOnBackdropClick: true }}
-      />
+      {gallery && (
+        <Suspense fallback={null}>
+          <GalleryModal event={gallery} onClose={() => setGallery(null)} />
+        </Suspense>
+      )}
     </div>
   );
 }

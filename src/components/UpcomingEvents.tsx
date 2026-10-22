@@ -94,6 +94,10 @@ export default function UpcomingEvents() {
                   <img
                     src="/tentacolo.png"
                     alt="Spritzzami in arrivo"
+                    width={208}
+                    height={208}
+                    loading="lazy"
+                    decoding="async"
                     className="h-40 w-auto object-contain opacity-90 drop-shadow-[0_0_25px_rgba(255,92,0,0.6)] sm:h-52"
                   />
                 </div>

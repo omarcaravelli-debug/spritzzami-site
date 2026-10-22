@@ -2,41 +2,53 @@ import { useEffect, useRef } from 'react';
 
 const PHRASE = 'STREET SPRITZ HOUSE REPEAT';
 const REPEAT_COUNT = 8;
-/** Pixel al secondo – più alto = più veloce */
+/** Pixel al secondo – velocità di scorrimento costante */
 const SPEED_PX_PER_SEC = 60;
 
 export default function MarqueeBanner() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const items = Array.from({ length: REPEAT_COUNT }, (_, i) => i);
 
-  /*
-   * Calcola la durata dell'animazione in base alla larghezza reale del primo
-   * gruppo, così il banner scorre sempre alla stessa velocità percepita
-   * indipendentemente dalla viewport. Ricalcola su resize / orientamento.
-   */
   useEffect(() => {
+    const container = containerRef.current;
     const track = trackRef.current;
-    if (!track) return;
+    if (!container || !track) return;
 
+    let rafId = 0;
     const setDuration = () => {
-      const firstGroup = track.firstElementChild as HTMLElement | null;
-      if (!firstGroup) return;
-      const groupWidth = firstGroup.offsetWidth;
-      const duration = groupWidth / SPEED_PX_PER_SEC;
-      track.style.animationDuration = `${duration}s`;
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const firstGroup = track.firstElementChild as HTMLElement | null;
+        if (!firstGroup) return;
+        const groupWidth = firstGroup.offsetWidth;
+        const duration = groupWidth / SPEED_PX_PER_SEC;
+        track.style.animationDuration = `${duration}s`;
+      });
     };
 
     setDuration();
 
-    // Ricalcola su resize / cambio orientamento
-    window.addEventListener('resize', setDuration);
-    window.addEventListener('orientationchange', setDuration);
+    // Ricalcola su resize o cambio orientamento
+    window.addEventListener('resize', setDuration, { passive: true });
+    window.addEventListener('orientationchange', setDuration, { passive: true });
 
-    // Riavvia l'animazione quando il tab torna visibile (fix freeze iOS/Android)
+    // Pausa l'animazione quando il banner non è visibile nella viewport (risparmio CPU/batteria)
+    let observer: IntersectionObserver | null = null;
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        },
+        { threshold: 0 }
+      );
+      observer.observe(container);
+    }
+
+    // Riavvia l'animazione quando il tab torna visibile dopo standby/background
     const handleVisibility = () => {
       if (document.visibilityState === 'visible' && track) {
         track.style.animationName = 'none';
-        // Force reflow per riavviare l'animazione
         void track.offsetWidth;
         track.style.animationName = '';
       }
@@ -44,9 +56,11 @@ export default function MarqueeBanner() {
     document.addEventListener('visibilitychange', handleVisibility);
 
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener('resize', setDuration);
       window.removeEventListener('orientationchange', setDuration);
       document.removeEventListener('visibilitychange', handleVisibility);
+      observer?.disconnect();
     };
   }, []);
 
@@ -56,6 +70,7 @@ export default function MarqueeBanner() {
 
   return (
     <div
+      ref={containerRef}
       role="region"
       aria-label="Street Spritz House Repeat ticker"
       className="relative z-10 w-full overflow-hidden border-y border-black/80 bg-black py-2 select-none sm:py-3.5"
@@ -74,7 +89,7 @@ export default function MarqueeBanner() {
                 alt=""
                 aria-hidden="true"
                 draggable={false}
-                loading="eager"
+                loading="lazy"
                 decoding="async"
                 width={32}
                 height={32}
@@ -84,7 +99,7 @@ export default function MarqueeBanner() {
           ))}
         </div>
 
-        {/* Secondo gruppo identico per loop infinito senza stacco */}
+        {/* Secondo gruppo identico per loop continuo senza scatti */}
         <div aria-hidden="true" className={groupClasses}>
           {items.map((i) => (
             <span key={`b-${i}`} className="flex items-center gap-4 sm:gap-8 whitespace-nowrap">
@@ -94,7 +109,7 @@ export default function MarqueeBanner() {
                 alt=""
                 aria-hidden="true"
                 draggable={false}
-                loading="eager"
+                loading="lazy"
                 decoding="async"
                 width={32}
                 height={32}
