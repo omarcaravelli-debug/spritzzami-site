@@ -8,7 +8,8 @@
     "city": "San Martino in Strada",
     "date": "2026-07-31",
     "coords": [45.28415, 9.53875],
-    "description": "Serata Spritzzami a La Pergola di San Martino in Strada."
+    "description": "Serata Spritzzami a La Pergola di San Martino in Strada.",
+    "externalGalleryUrl": "https://photos.app.goo.gl/VLKfRrnL2ZyF6L4u6"
   },
   {
     "slug": "vol-2-zanzibar",
@@ -19,7 +20,8 @@
     "city": "Crema",
     "date": "2026-05-01",
     "coords": [45.3671, 9.6991],
-    "description": "Serata Spritzzami al Zanzibar di Crema."
+    "description": "Serata Spritzzami al Zanzibar di Crema.",
+    "externalGalleryUrl": "https://photos.app.goo.gl/PzQnqwQszB45G3gA6"
   },
   {
     "slug": "vol-3-masseroni",
@@ -30,7 +32,8 @@
     "city": "Lodi",
     "date": "2026-07-12",
     "coords": [45.31224, 9.50436],
-    "description": "Serata Spritzzami al Bar Masseroni in Corso Roma a Lodi."
+    "description": "Serata Spritzzami al Bar Masseroni in Corso Roma a Lodi.",
+    "externalGalleryUrl": "https://photos.app.goo.gl/uj193Z3ideQDKPR49"
   },
   {
     "slug": "vol-4-aura-club-garden",
@@ -52,7 +55,8 @@
     "city": "Lodi",
     "date": "2026-10-04",
     "coords": [45.31358, 9.50262],
-    "description": "Serata Spritzzami Al Portico dei Pensieri in Piazza della Vittoria a Lodi."
+    "description": "Serata Spritzzami Al Portico dei Pensieri in Piazza della Vittoria a Lodi.",
+    "externalGalleryUrl": "https://photos.app.goo.gl/E9LGni6awFPRFWbS6"
   },
   {
     "slug": "vol-6-corso-umberto",
