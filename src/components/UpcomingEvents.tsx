@@ -1,6 +1,5 @@
 import SectionHeading from './SectionHeading';
 import Reveal from './Reveal';
-import { siteConfig } from '../config';
 
 export default function UpcomingEvents() {
   return (
@@ -109,32 +108,6 @@ export default function UpcomingEvents() {
                 <p className="mt-2 font-mono text-xs text-white/80">
                   Gli annunci ufficiali verranno rilasciati prima sulle nostre storie IG.
                 </p>
-
-                <a
-                  href={siteConfig.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm border border-white/80 bg-white/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#ff5c00] active:scale-95"
-                >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                  </svg>
-                  <span>Avvisami su Instagram ↗</span>
-                </a>
-                <span className="mt-1.5 block font-mono text-[10px] text-white/60">
-                  Tocca la campanella sul profilo per non perdertelo
-                </span>
 
                 <div className="mt-6 flex items-center gap-2 font-mono text-[11px] text-[#ff5c00]">
                   <span className="h-1.5 w-1.5 animate-ping rounded-full bg-[#ff5c00]" />
