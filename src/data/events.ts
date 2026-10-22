@@ -11,6 +11,7 @@ export interface SpritzEvent {
   coords: [number, number];
   description: string;
   driveUrl?: string;
+  externalGalleryUrl?: string;
   /** true se la data è oggi o nel futuro */
   upcoming: boolean;
   cover: string | null;

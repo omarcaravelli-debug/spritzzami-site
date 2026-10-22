@@ -54,25 +54,25 @@ export default function UpcomingEvents() {
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Location</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      <span>📍</span> [TOP SECRET]
+                      [TOP SECRET]
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Data & Ora</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-[#ff5c00] sm:gap-1.5">
-                      <span>⏳</span> IN ARRIVO A BREVE
+                      IN ARRIVO A BREVE
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Line-up</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      <span>🎧</span> SECRET GUESTS
+                      SECRET GUESTS
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Ingresso</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      <span>🎟</span> FREE ENTRY
+                      FREE ENTRY
                     </div>
                   </div>
                 </div>

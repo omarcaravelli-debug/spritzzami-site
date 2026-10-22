@@ -76,11 +76,29 @@ a {
   }
 }
 
-.animate-spritz-marquee {
+.marquee-track {
   display: flex;
   width: max-content;
-  animation: spritz-marquee 42s linear infinite;
-  will-change: transform;
+  animation: spritz-marquee 30s linear infinite;
+  /* GPU compositing hints — prevengono il freeze su iOS/Android */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform: translate3d(0, 0, 0);
+  /* will-change solo su desktop; su mobile causa più problemi che vantaggi */
+}
+@media (min-width: 640px) {
+  .marquee-track {
+    will-change: transform;
+  }
+}
+
+/* Pausa l'animazione quando il tab non è visibile (risparmio batteria) */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 /* ── marker Leaflet ───────────────────────────────────────────────────── */

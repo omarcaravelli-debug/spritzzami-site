@@ -273,7 +273,16 @@ export default function EventMap({
                           <p className="mt-0.5 font-mono text-[10px] text-white/80 sm:text-[11px]">
                             {event.venue} · {event.city} · {formatDate(event.date)}
                           </p>
-                          {event.photos.length > 0 && (
+                          {event.externalGalleryUrl ? (
+                            <a
+                              href={event.externalGalleryUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-2 block w-full rounded-sm bg-white py-1.5 text-center font-mono text-xs font-bold uppercase tracking-wider text-[#ff5c00] transition-colors hover:bg-white/90"
+                            >
+                              Vedi le foto ↗
+                            </a>
+                          ) : event.photos.length > 0 && (
                             <button
                               onClick={() => onOpenGallery(event)}
                               className="mt-2 w-full rounded-sm bg-white py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#ff5c00] transition-colors hover:bg-white/90"
