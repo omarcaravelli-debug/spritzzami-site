@@ -283,9 +283,15 @@ export default function EventMap({
                             >
                               Vedi le foto ↗
                             </a>
-                          ) : event.photos.length > 0 && (
+                          ) : (
                             <button
-                              onClick={() => onOpenGallery(event)}
+                              type="button"
+                              onClick={() => {
+                                if (event.slug === 'vol-4-aura-club-garden') {
+                                  return;
+                                }
+                                onOpenGallery(event);
+                              }}
                               className="mt-2 w-full rounded-sm bg-white py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#ff5c00] transition-colors hover:bg-white/90"
                             >
                               Vedi le foto
