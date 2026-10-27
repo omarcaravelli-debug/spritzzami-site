@@ -69,5 +69,16 @@
     "coords": [45.315399, 9.504175],
     "description": "Serata Spritzzami al Bar Motta in Corso Umberto I 44 a Lodi.",
     "externalGalleryUrl": "https://photos.app.goo.gl/ioyPWgR7SWpJhGJE6"
+  },
+  {
+    "slug": "vol-7-re-matto",
+    "title": "VOL. 7 — RE MATTO",
+    "mapLabel": "Re Matto",
+    "category": "cafe",
+    "venue": "Re Matto, Via Volturno 9",
+    "city": "Lodi",
+    "date": "2026-11-01",
+    "coords": [45.3136, 9.5058],
+    "description": "Serata Spritzzami al Re Matto in Via Volturno 9 a Lodi."
   }
 ]

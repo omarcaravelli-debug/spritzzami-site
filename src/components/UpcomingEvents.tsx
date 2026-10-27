@@ -1,7 +1,52 @@
+import { useState, useEffect } from 'react';
 import SectionHeading from './SectionHeading';
 import Reveal from './Reveal';
 
+/** Data dell'evento Vol. 7 — Domenica 1 Novembre 2026, ore 19:00 CET */
+const EVENT_DATE = new Date('2026-11-01T19:00:00+01:00');
+
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+function getTimeLeft(): TimeLeft | null {
+  const now = Date.now();
+  const diff = EVENT_DATE.getTime() - now;
+  if (diff <= 0) return null;
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
+}
+
+function CountdownUnit({ value, label }: { value: number; label: string }) {
+  return (
+    <div className="flex flex-col items-center">
+      <span className="font-display text-4xl tabular-nums text-white sm:text-6xl lg:text-7xl">
+        {String(value).padStart(2, '0')}
+      </span>
+      <span className="mt-1 font-mono text-[9px] uppercase tracking-widest text-white/60 sm:text-[11px]">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function UpcomingEvents() {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(getTimeLeft);
+
+  useEffect(() => {
+    const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const isLive = timeLeft === null;
+
   return (
     <section
       id="eventi"
@@ -17,7 +62,7 @@ export default function UpcomingEvents() {
       <div className="mx-auto w-full max-w-7xl">
         <SectionHeading
           index="02"
-          kicker="Top Secret"
+          kicker="Prossimo appuntamento"
           title="PROSSIMI EVENTI"
         />
 
@@ -31,42 +76,44 @@ export default function UpcomingEvents() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff5c00] opacity-75" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#ff5c00] sm:h-3 sm:w-3" />
                 </span>
-                <span className="font-bold text-[#ff5c00]">STATUS: IN PREPARAZIONE</span>
+                <span className="font-bold text-[#ff5c00]">
+                  {isLive ? 'STATUS: LIVE NOW 🔥' : 'STATUS: CONFERMATO'}
+                </span>
               </div>
               <span className="rounded bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/80 sm:px-2.5 sm:py-1 sm:text-[11px]">
-                VOLUME 07 · STAY TUNED
+                VOLUME 07 · 1 NOV 2026
               </span>
             </div>
 
             <div className="grid items-center gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
               <div>
                 <h3 className="font-display text-4xl uppercase tracking-wider text-white sm:text-6xl lg:text-7xl leading-[0.95]">
-                  WORK IN <br />
-                  <span className="text-[#ff5c00]">PROGRESS</span>
+                  RE{' '}
+                  <span className="text-[#ff5c00]">MATTO</span>
                 </h3>
 
                 <p className="mt-4 max-w-xl font-body text-sm text-white/80 sm:mt-5 sm:text-lg">
-                  Stiamo cucinando una nuova location per il prossimo round.
+                  Domenica 1 Novembre — ore 19:00. Spritz, musica e buona compagnia al Re Matto di Lodi.
                 </p>
 
-                {/* Schede informative / Dettagli riservati */}
+                {/* Schede informative */}
                 <div className="mt-6 grid grid-cols-2 gap-2 font-mono text-[11px] sm:mt-8 sm:gap-4 sm:text-sm">
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Location</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      [TOP SECRET]
+                      RE MATTO
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Data & Ora</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-[#ff5c00] sm:gap-1.5">
-                      IN ARRIVO A BREVE
+                      DOM 1 NOV · 19:00
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
-                    <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Line-up</div>
+                    <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Indirizzo</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      SECRET GUESTS
+                      VIA VOLTURNO 9, LODI
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
@@ -88,31 +135,39 @@ export default function UpcomingEvents() {
                 </div>
               </div>
 
-              {/* Lato Grafico: tentacolo */}
-              <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-white/20 bg-black/30 p-8 text-center sm:p-12">
-                <div className="relative mb-6 flex items-center justify-center">
-                  <img
-                    src="/tentacolo.png"
-                    alt="Spritzzami in arrivo"
-                    width={208}
-                    height={208}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-40 w-auto object-contain opacity-90 drop-shadow-[0_0_25px_rgba(255,92,0,0.6)] sm:h-52"
-                  />
-                </div>
+              {/* Lato destro: Countdown */}
+              <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-white/20 bg-black/30 p-6 text-center sm:p-10">
+                {isLive ? (
+                  <>
+                    <div className="mb-4 font-display text-4xl uppercase tracking-wider text-[#ff5c00] sm:text-5xl animate-pulse">
+                      È ORA! 🎉
+                    </div>
+                    <p className="font-mono text-sm text-white/80">
+                      La serata è iniziata — ci vediamo al Re Matto!
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <div className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 sm:text-xs">
+                      Countdown al Vol. 07
+                    </div>
 
-                <div className="font-mono text-xs uppercase tracking-[0.2em] text-white/60">
-                  Operazione Vol. 07
-                </div>
-                <p className="mt-2 font-mono text-xs text-white/80">
-                  Gli annunci ufficiali verranno rilasciati prima sulle nostre storie IG.
-                </p>
+                    <div className="flex items-center gap-3 sm:gap-5">
+                      <CountdownUnit value={timeLeft.days} label="Giorni" />
+                      <span className="font-display text-3xl text-white/30 sm:text-5xl">:</span>
+                      <CountdownUnit value={timeLeft.hours} label="Ore" />
+                      <span className="font-display text-3xl text-white/30 sm:text-5xl">:</span>
+                      <CountdownUnit value={timeLeft.minutes} label="Min" />
+                      <span className="font-display text-3xl text-white/30 sm:text-5xl">:</span>
+                      <CountdownUnit value={timeLeft.seconds} label="Sec" />
+                    </div>
 
-                <div className="mt-6 flex items-center gap-2 font-mono text-[11px] text-[#ff5c00]">
-                  <span className="h-1.5 w-1.5 animate-ping rounded-full bg-[#ff5c00]" />
-                  <span>Aggiornamenti in arrivo</span>
-                </div>
+                    <div className="mt-6 flex items-center gap-2 font-mono text-[11px] text-[#ff5c00]">
+                      <span className="h-1.5 w-1.5 animate-ping rounded-full bg-[#ff5c00]" />
+                      <span>Dom 1 Nov · 19:00 · Via Volturno 9, Lodi</span>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
