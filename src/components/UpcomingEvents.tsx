@@ -92,9 +92,7 @@ export default function UpcomingEvents() {
                   <span className="text-[#ff5c00]">MATTO</span>
                 </h3>
 
-                <p className="mt-4 max-w-xl font-body text-sm text-white/80 sm:mt-5 sm:text-lg">
-                  Domenica 1 Novembre — ore 19:00. Spritz, musica e buona compagnia al Re Matto di Lodi.
-                </p>
+
 
                 {/* Schede informative */}
                 <div className="mt-6 grid grid-cols-2 gap-2 font-mono text-[11px] sm:mt-8 sm:gap-4 sm:text-sm">
