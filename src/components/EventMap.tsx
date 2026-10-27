@@ -165,10 +165,10 @@ export default function EventMap({
   };
 
   return (
-    <section id="mappa" className="flex flex-col justify-center px-3 pt-20 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
+    <section id="mappa" className="flex flex-col justify-center border-t-2 border-line px-3 py-12 sm:px-6 sm:py-20">
       <div className="mx-auto w-full max-w-7xl">
         <SectionHeading
-          index="01"
+          index="02"
           kicker="Le serate"
           title="MEMORIES"
           sub="Clicca un punto sulla mappa o nella lista per vedere i dettagli e le foto."

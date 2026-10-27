@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { siteConfig } from '../config';
 
 const LINKS = [
-  { href: '#mappa', label: 'Memories' },
   { href: '#eventi', label: 'Prossimi eventi' },
+  { href: '#mappa', label: 'Memories' },
   { href: '#contatti', label: 'Contatti' },
 ];
 

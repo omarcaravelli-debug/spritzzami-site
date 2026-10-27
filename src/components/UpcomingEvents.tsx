@@ -50,7 +50,7 @@ export default function UpcomingEvents() {
   return (
     <section
       id="eventi"
-      className="relative flex flex-col justify-center border-t-2 border-line px-3 py-12 sm:px-8 sm:py-20"
+      className="relative flex flex-col justify-center px-3 pt-20 pb-12 sm:px-8 sm:pt-24 sm:pb-20"
       style={{
         backgroundImage: `
           linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
@@ -61,7 +61,7 @@ export default function UpcomingEvents() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <SectionHeading
-          index="02"
+          index="01"
           kicker="Prossimo appuntamento"
           title="PROSSIMI EVENTI"
         />
@@ -99,7 +99,7 @@ export default function UpcomingEvents() {
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Location</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      RE MATTO
+                      RE MATTO CAFFÈ
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
