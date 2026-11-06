@@ -24,9 +24,9 @@ export default function App() {
     <div className="min-h-screen overflow-x-clip bg-[#ff5c00] text-white">
       <Navbar />
       <main id="top">
-        <EventMap onOpenGallery={setGallery} />
-        <MarqueeBanner />
         <UpcomingEvents />
+        <MarqueeBanner />
+        <EventMap onOpenGallery={setGallery} />
         <MarqueeBanner />
         <Contact />
       </main>

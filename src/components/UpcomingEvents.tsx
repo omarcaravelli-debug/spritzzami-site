@@ -1,11 +1,12 @@
 import SectionHeading from './SectionHeading';
 import Reveal from './Reveal';
+import { siteConfig } from '../config';
 
 export default function UpcomingEvents() {
   return (
     <section
       id="eventi"
-      className="relative flex flex-col justify-center border-t-2 border-line px-3 py-12 sm:px-8 sm:py-20"
+      className="relative flex flex-col justify-center px-3 pt-20 pb-12 sm:px-8 sm:pt-24 sm:pb-20"
       style={{
         backgroundImage: `
           linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
@@ -16,8 +17,8 @@ export default function UpcomingEvents() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <SectionHeading
-          index="02"
-          kicker="Top Secret"
+          index="01"
+          kicker="Prossimo appuntamento"
           title="PROSSIMI EVENTI"
         />
 
@@ -31,22 +32,22 @@ export default function UpcomingEvents() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff5c00] opacity-75" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#ff5c00] sm:h-3 sm:w-3" />
                 </span>
-                <span className="font-bold text-[#ff5c00]">STATUS: IN PREPARAZIONE</span>
+                <span className="font-bold text-[#ff5c00]">STATUS: CONFERMATO</span>
               </div>
               <span className="rounded bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/80 sm:px-2.5 sm:py-1 sm:text-[11px]">
-                VOLUME 08 · STAY TUNED
+                VOLUME 08 · LODI
               </span>
             </div>
 
             <div className="grid items-center gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
               <div>
                 <h3 className="font-display text-4xl uppercase tracking-wider text-white sm:text-6xl lg:text-7xl leading-[0.95]">
-                  WORK IN <br />
-                  <span className="text-[#ff5c00]">PROGRESS</span>
+                  MOODY'S{' '}
+                  <span className="text-[#ff5c00]">BAR</span>
                 </h3>
 
                 <p className="mt-4 max-w-xl font-body text-sm text-white/80 sm:mt-5 sm:text-lg">
-                  Stiamo cucinando una nuova location per il prossimo round.
+                  Nuova tappa per il polpo Spritzzami: ci vediamo al Moody's Bar a Lodi.
                 </p>
 
                 {/* Schede informative / Dettagli riservati */}
@@ -54,7 +55,7 @@ export default function UpcomingEvents() {
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
                     <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Location</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      [TOP SECRET]
+                      MOODY'S BAR
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
@@ -64,9 +65,9 @@ export default function UpcomingEvents() {
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
-                    <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Line-up</div>
+                    <div className="text-[9px] uppercase tracking-wider text-white/50 sm:text-xs sm:tracking-widest">Indirizzo</div>
                     <div className="mt-1 flex items-center gap-1 font-bold tracking-wider text-white sm:gap-1.5">
-                      SECRET GUESTS
+                      PIAZZA CASTELLO 32, LODI
                     </div>
                   </div>
                   <div className="rounded border border-white/15 bg-black/40 p-2.5 sm:p-4 backdrop-blur-sm">
@@ -80,10 +81,18 @@ export default function UpcomingEvents() {
                 {/* Bottoni di azione */}
                 <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
                   <a
-                    href="#contatti"
+                    href={siteConfig.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-sm border-2 border-white bg-white px-6 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#ff5c00] transition-colors hover:bg-transparent hover:text-white sm:w-auto sm:text-sm"
                   >
-                    <span>Proponi la tua location ↓</span>
+                    <span>Info su Instagram ↗</span>
+                  </a>
+                  <a
+                    href="#contatti"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-sm border-2 border-white/40 px-6 py-3 font-mono text-xs font-bold uppercase tracking-wider text-white transition-colors hover:border-white hover:bg-white hover:text-[#ff5c00] sm:w-auto sm:text-sm"
+                  >
+                    <span>Proponi location ↓</span>
                   </a>
                 </div>
               </div>
@@ -106,12 +115,12 @@ export default function UpcomingEvents() {
                   Operazione Vol. 08
                 </div>
                 <p className="mt-2 font-mono text-xs text-white/80">
-                  Gli annunci ufficiali verranno rilasciati prima sulle nostre storie IG.
+                  La data ufficiale e tutti i dettagli verranno annunciati prima sulle nostre storie IG.
                 </p>
 
                 <div className="mt-6 flex items-center gap-2 font-mono text-[11px] text-[#ff5c00]">
                   <span className="h-1.5 w-1.5 animate-ping rounded-full bg-[#ff5c00]" />
-                  <span>Aggiornamenti in arrivo</span>
+                  <span>Piazza Castello 32, Lodi</span>
                 </div>
               </div>
             </div>
