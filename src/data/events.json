@@ -81,5 +81,16 @@
     "coords": [45.31505, 9.50440],
     "description": "Serata Spritzzami al Re Matto Caffè in Via Volturno 9 a Lodi.",
     "externalGalleryUrl": "https://photos.app.goo.gl/EVaze2kPzeX1jLGJ9"
+  },
+  {
+    "slug": "vol-8-moodys-bar",
+    "title": "VOL. 8 — MOODY'S BAR",
+    "mapLabel": "Moody's Bar",
+    "category": "bar",
+    "venue": "Moody's Bar, Piazza Castello 32",
+    "city": "Lodi",
+    "date": "2026-11-15",
+    "coords": [45.31263, 9.49928],
+    "description": "Serata Spritzzami al Moody's Bar in Piazza Castello 32 a Lodi."
   }
 ]

@@ -283,6 +283,13 @@ export default function EventMap({
                             >
                               Vedi le foto ↗
                             </a>
+                          ) : event.upcoming ? (
+                            <a
+                              href="#eventi"
+                              className="mt-2 block w-full rounded-sm bg-white py-1.5 text-center font-mono text-xs font-bold uppercase tracking-wider text-[#ff5c00] transition-colors hover:bg-white/90"
+                            >
+                              Dettagli serata ↑
+                            </a>
                           ) : (
                             <button
                               type="button"
