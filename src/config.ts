@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 export const siteConfig = {
   name: 'Spritzzami',
-  tagline: "Il polpo dell'aperitivo.",
+  tagline: "Il format itinerante a base di spritz!",
   instagram: 'https://www.instagram.com/spritzzami',
   instagramHandle: '@spritzzami',
   // Email usata dal form contatti (apre il programma di posta del visitatore)
