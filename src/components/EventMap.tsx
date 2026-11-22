@@ -165,10 +165,10 @@ export default function EventMap({
   };
 
   return (
-    <section id="mappa" className="flex flex-col justify-center border-t-2 border-line px-3 py-12 sm:px-6 sm:py-20">
+    <section id="mappa" className="flex flex-col justify-center px-3 pt-20 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
       <div className="mx-auto w-full max-w-7xl">
         <SectionHeading
-          index="02"
+          index="01"
           kicker="Le serate"
           title="MEMORIES"
           sub="Clicca un punto sulla mappa o nella lista per vedere i dettagli e le foto."
@@ -288,7 +288,7 @@ export default function EventMap({
                               href="#eventi"
                               className="mt-2 block w-full rounded-sm bg-white py-1.5 text-center font-mono text-xs font-bold uppercase tracking-wider text-[#ff5c00] transition-colors hover:bg-white/90"
                             >
-                              Dettagli serata ↑
+                              Dettagli serata ↓
                             </a>
                           ) : (
                             <button
